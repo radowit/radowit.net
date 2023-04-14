@@ -11,12 +11,16 @@ jobs:
     name: Build and push statics over ssh
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
     - name: Python Poetry Action
       uses: abatilo/actions-poetry@v2.1.6
-      with:
+    - name: View poetry --help
+      env:
         key: ${{ secrets.AMBER_SSH_KEY }}
-        script_stop: true
-        script: |
-          poetry install
-          echo "$key" > ~/.ssh/id_rsa
-          invoke publish
+      run: |
+        poetry install
+        echo "$key" > ~/.ssh/id_rsa
+        invoke publish
