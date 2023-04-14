@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "radowit-net"
+version = "0.1.0"
+description = ""
+authors = ["Radosław Ganczarek <radoslaw@ganczarek.in>"]
+license = "CC0"
+readme = "README.md"
+packages = [{include = "radowit"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pelican = { version = "~4.8.0", extras = ["markdown"] }
+invoke = "^2.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
