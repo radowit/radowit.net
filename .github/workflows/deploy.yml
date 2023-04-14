@@ -1,0 +1,22 @@
+name: Deploy on production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build:
+    name: Build and push statics over ssh
+    runs-on: ubuntu-latest
+    steps:
+    - name: Python Poetry Action
+      uses: abatilo/actions-poetry@v2.1.6
+      with:
+        key: ${{ secrets.AMBER_SSH_KEY }}
+        script_stop: true
+        script: |
+          poetry install
+          echo "$key" > ~/.ssh/id_rsa
+          invoke publish
