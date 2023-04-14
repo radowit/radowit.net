@@ -11,6 +11,7 @@ packages = [{include = "radowit"}]
 python = "^3.11"
 pelican = { version = "~4.8.0", extras = ["markdown"] }
 invoke = "^2.0.0"
+typogrify = "^2.0.7"
 
 
 [build-system]
