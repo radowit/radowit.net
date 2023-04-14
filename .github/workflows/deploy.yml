@@ -23,11 +23,10 @@ jobs:
         poetry install --no-root
     - name: Deploy
       env:
-        key: ${{ secrets.AMBER_SSH_KEY }}
-        known_hosts: ${{ secrets.KNOWN_HOSTS }}
+        SSH_KEY: ${{ secrets.AMBER_SSH_KEY }}
       run: |
         mkdir ~/.ssh
-        echo "$key" > ~/.ssh/id_rsa
+        echo "$SSH_KEY" > ~/.ssh/id_rsa
         ssh-keyscan -H radowit.net > ~/.ssh/known_hosts
         chmod 600 ~/.ssh/id_rsa
         chmod 600 ~/.ssh/known_hosts
