@@ -27,4 +27,4 @@ jobs:
       run: |
         mkdir ~/.ssh
         echo "$key" > ~/.ssh/id_rsa
-        poetry invoke publish
+        poetry run invoke publish
