@@ -25,5 +25,6 @@ jobs:
       env:
         key: ${{ secrets.AMBER_SSH_KEY }}
       run: |
+        mkdir ~/.ssh
         echo "$key" > ~/.ssh/id_rsa
         poetry invoke publish
