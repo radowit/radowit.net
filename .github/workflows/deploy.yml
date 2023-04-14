@@ -24,7 +24,9 @@ jobs:
     - name: Deploy
       env:
         key: ${{ secrets.AMBER_SSH_KEY }}
+        known_hosts: ${{ secrets.KNOWN_HOSTS }}
       run: |
         mkdir ~/.ssh
         echo "$key" > ~/.ssh/id_rsa
+        echo "$known_hosts" > ~/.ssh/known_hosts
         poetry run invoke publish
