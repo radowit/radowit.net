@@ -22,7 +22,7 @@ LOAD_CONTENT_CACHE = False
 
 AUTHOR = "Radosław Ganczarek"
 SITENAME = "Radowit"
-SITEURL = "https://radowit.net/"
+SITEURL = ""
 
 # JINJA
 
@@ -68,7 +68,7 @@ STATIC_CHECK_IF_MODIFIED = False
 STATIC_CREATE_LINKS = False
 STATIC_EXCLUDE_SOURCES = True
 STATIC_EXCLUDES = []
-STATIC_PATHS = []
+STATIC_PATHS = ["images"]
 
 # Typogrify
 
